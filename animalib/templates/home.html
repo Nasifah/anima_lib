@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'account/home.css' %}" />
+  </head>
+  <body>
+    <header>Home Page</header>
+    <main>
+      <h2>This is The Home Page</h2>
+      <section>
+        {% if user.is_authenticated %} Congratulations {{ user.username }},
+        you're here!!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>

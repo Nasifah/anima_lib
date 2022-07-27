@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'account/signup.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Sign Up</h1>
+    </header>
+    <form method="post">
+      {% csrf_token %} 
+      {{form.as_p}}
+      <!-- <label for="fname">Firstname:</label>
+      <input type="text" name="fname" id="fname" /><br />
+      <label for="lname">Lastname:</label>
+      <input type="text" name="lname" id="lname " /><br />
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="" /><br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" /><br /><br /> -->
+      <button type="submit">Sign Up</button>
+    </form>
+  </body>
+</html>
